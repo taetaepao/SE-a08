@@ -20,27 +20,39 @@ export default function PromoteCard() {
 
   return (
     <div
-      ref={wrapperRef}
-      className="
-        max-w-3xl mx-auto p-6
-        bg-white rounded-2xl shadow
-        flex flex-col items-center gap-4
-      "
-    >
-      <h2 className="text-xl font-semibold">Venue Promo</h2>
-      <VideoPlayer vdoSrc="/vdo/venue.mp4" isPlaying={playing} />
+  ref={wrapperRef}
+  className="
+    max-w-4xl mx-auto p-8
+    bg-gradient-to-r from-white to-gray-50
+    rounded-2xl shadow-lg
+    flex flex-row items-center justify-between
+    gap-8
+  "
+>
+  {/* วิดีโอแสดงด้านซ้าย */}
+  <div className="flex-1">
+    <VideoPlayer vdoSrc="/vdo/venue.mp4" isPlaying={playing} />
+  </div>
 
-      <button
-        className="
-          px-5 py-2 rounded-lg
-          bg-gray-900 text-white
-          hover:bg-gray-800 transition
-        "
-        onClick={() => setPlaying((v) => !v)}
-        name={playing ? "Pause" : "Play"}
-      >
-        {playing ? "Pause" : "Play"}
-      </button>
-    </div>
+  {/* ข้อความและปุ่ม */}
+  <div className="flex-1 flex flex-col items-start gap-4">
+    <h2 className="text-2xl font-bold text-gray-900 leading-snug margin-10">
+      Book your venue today
+    </h2>
+    <button
+      className="
+        px-6 py-3 rounded-lg
+        bg-indigo-600 text-white
+        hover:bg-indigo-700 transition-colors
+        font-medium shadow
+      "
+      onClick={() => setPlaying((v) => !v)}
+      name={playing ? "Pause" : "Play"}
+    >
+      {playing ? "Pause" : "Play"}
+    </button>
+  </div>
+</div>
+
   );
 }
