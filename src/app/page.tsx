@@ -4,7 +4,7 @@ import PromoteCard from '@/components/PromoteCard';
 
 export default function Page() {
   return (
-    <main className="pt-16">
+    <main>
       <Banner />
       <PromoteCard />
     </main>

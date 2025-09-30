@@ -23,9 +23,8 @@ export default function Banner() {
         onClick={nextImage}
       />
 
-      {/* overlay */}
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <div className="text-center text-white px-6 py-6 bg-black/60 rounded-xl max-w-2xl mx-auto">
+        <div className="text-center text-white px-6 py-6 bg-black/60 rounded-xl  mx-auto">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Where every event finds its venue
           </h1>
@@ -35,7 +34,6 @@ export default function Banner() {
         </div>
       </div>
 
-      {/* ปุ่มไป /venue */}
       <button
         className="
           absolute bottom-4 right-4
