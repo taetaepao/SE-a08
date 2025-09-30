@@ -15,11 +15,12 @@ export default function VideoPlayer({
     const v = videoRef.current;
     if (!v) return;
 
-    v.muted = true;
-
+    v.muted = true; 
     if (isPlaying) {
-      v.play().catch(() => {
-      });
+      const maybePromise = v.play();
+      if (maybePromise && typeof (maybePromise as any).catch === "function") {
+        (maybePromise as Promise<void>).catch(() => {});
+      }
     } else {
       v.pause();
     }

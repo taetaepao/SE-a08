@@ -7,11 +7,9 @@ export default function useWindowListener(
   listener: EventListener
 ) {
   useEffect(() => {
-    const opts: AddEventListenerOptions | boolean = { passive: false };
-
-    window.addEventListener(eventType, listener, opts);
+    window.addEventListener(eventType, listener);
     return () => {
-      window.removeEventListener(eventType, listener, opts as any);
+      window.removeEventListener(eventType, listener);
     };
-  }, [eventType]);
+  }, [eventType, listener]);
 }
