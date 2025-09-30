@@ -41,10 +41,6 @@ export default function PromoteCard() {
       >
         {playing ? "Pause" : "Play"}
       </button>
-
-      <p className="text-sm text-gray-600">
-        * Right-click is disabled in this area
-      </p>
     </div>
   );
 }
